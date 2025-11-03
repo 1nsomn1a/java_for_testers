@@ -10,6 +10,14 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
+
+        if(a < 0 || b < 0 || c < 0) {
+            throw new IllegalArgumentException("Triangle side should be non-negative");
+        }
+
+        if((!(a+b>c) || !(b+c>a) || !(c+a>b))) {
+            throw new IllegalArgumentException("Cannot create Triangle");
+        }
     }
 
     public double area(){
